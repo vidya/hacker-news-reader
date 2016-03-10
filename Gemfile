@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 ruby "2.2.4"
 
 gem 'pry'
@@ -6,15 +7,20 @@ gem 'pry-nav'
 
 gem 'feedjira'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# gem 'rails', '4.0'
+
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+
+# Use Twitter Bootstrap
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -37,7 +43,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-# gem 'thin'
 gem 'puma'
 
 # Use Capistrano for deployment
@@ -56,11 +61,5 @@ group :development do
   gem 'spring'
 end
 
-
-# group :production do
-#   # for Heroku deployment
-#   gem 'rails_12factor'
-# end
-
+# for Heroku deployment
 gem 'rails_12factor', group: :production
-
