@@ -1,0 +1,33 @@
+<%= form_for(@headline) do |f| %>
+  <% if @headline.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@headline.errors.count, "error") %> prohibited this headline from being saved:</h2>
+
+      <ul>
+      <% @headline.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :published %><br>
+    <%= f.date_select :published %>
+  </div>
+  <div class="field">
+    <%= f.label :summary %><br>
+    <%= f.text_field :summary %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
