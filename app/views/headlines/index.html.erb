@@ -6,7 +6,7 @@
     <h1>Feed Lister</h1>
 </div>
 
-<table>
+<table id="feed-items">
   <thead>
     <tr>
       <th>Title</th>
@@ -44,6 +44,11 @@
   </tbody>
 </table>
 
-<br>
+<script>
+  $(function(){
+    $("#feed-items").dataTable();
+  })
+  </script>
+<!--<br>-->
 
-<%= link_to 'New Headline', new_headline_path %>
+<!--<%= link_to 'New Headline', new_headline_path %>-->
