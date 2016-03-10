@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
+ruby "2.2.4"
 
 gem 'pry'
 gem 'pry-nav'
 
 gem 'feedjira'
 
-# for Heroku deployment
-gem 'rails_12factor'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
+# gem 'rails', '4.0'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'pg'
@@ -37,7 +37,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-gem 'thin'
+# gem 'thin'
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -53,5 +54,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :production do
+  # for Heroku deployment
+  gem 'rails_12factor'
 end
 
