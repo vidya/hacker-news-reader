@@ -10,23 +10,24 @@
   <thead>
     <tr>
       <th>Title</th>
-      <!--<th>Url</th>-->
       <th>Published</th>
-      <!--<th>Summary</th>-->
+      <th>Action</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
 
-    <% @entries.each do |entry| %>
+    <% @entries.each_with_index do |entry, index| %>
       <tr>
-        <!--<td><%= entry[:title] %></td>-->
         <td><%= link_to entry[:title], entry[:url] %></td>
-        <!--<td><%= entry[:published].ctime %></td>-->
+
         <td><%= entry[:published].strftime("%a %b %d, %Y") %></td>
-        <!--<td><%= entry[:published].strftime("%Y-%m-%d %H:%M:%S") %></td>-->
+
         <!--<td><%= entry[:summary] %></td>-->
+
+        <td class="save-link" id=<%= "entry-#{index}" %> > <%= link_to "Save", '#', :remote => true %>.
+        </td>
       </tr>
     <% end %>
 
