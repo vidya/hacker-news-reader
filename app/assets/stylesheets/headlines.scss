@@ -2,10 +2,61 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.save-link {
-  margin-left: 20px;
-  color: red;
-
-  font-size: 1.4em;
-  padding-left: 40px;
+// layout
+div.dataTables_filter, .dataTables_paginate {
+  text-align: right;
 }
+
+#left-column {
+  width: 49%;
+}
+
+#right-column {
+  width: 49%;
+}
+
+// tables
+table caption {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 2.0em;
+}
+
+table {
+  border: 1px solid blue;
+
+  margin-bottom: 8px;
+  padding-right: 4px;
+//  border-collapse: collapse;
+//  z-index: 2;
+}
+
+table th {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+table#feed-items {
+  background-color: lightyellow;
+}
+
+table#favorite-items {
+  background-color: lightcyan;
+}
+
+// others
+.save-link {
+  padding-left: 8px;
+}
+
+.item-link {
+  width: 380px;
+  padding-top: 10px;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+.publication-date {
+  width: 120px;
+}
+

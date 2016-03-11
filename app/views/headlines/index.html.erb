@@ -6,48 +6,140 @@
     <h1>Feed Lister</h1>
 </div>
 
-<table id="feed-items">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Published</th>
-      <th>Action</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" id="left-column">
+          <table id="feed-items">
+            <caption>Headlines</caption>
 
-  <tbody>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Published</th>
+                <th>Action</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
 
-    <% @entries.each_with_index do |entry, index| %>
-      <tr>
-        <td><%= link_to entry[:title], entry[:url] %></td>
+            <tbody>
 
-        <td><%= entry[:published].strftime("%a %b %d, %Y") %></td>
+              <% @entries.each_with_index do |entry, index| %>
+                <tr>
+                  <td class="item-link"><%= link_to entry[:title], entry[:url] %></td>
 
-        <!--<td><%= entry[:summary] %></td>-->
+                  <td class="publication-date"><%= entry[:published].strftime("%a %b %d, %Y") %></td>
 
-        <td class="save-link" id=<%= "entry-#{index}" %> > <%= link_to "Save", '#', :remote => true %>.
-        </td>
-      </tr>
-    <% end %>
+                  <!--<td><%= entry[:summary] %></td>-->
 
-    <!--<% @headlines.each do |headline| %>-->
+                  <td class="save-link" id=<%= "entry-#{index}" %> > <%= link_to "Save", '#', :remote => true %>
+                  </td>
+                </tr>
+              <% end %>
+
+              <!--<% @headlines.each do |headline| %>-->
+                <!--<tr>-->
+                  <!--<td><%= headline.title %></td>-->
+                  <!--<td><%= headline.url %></td>-->
+                  <!--<td><%= headline.published %></td>-->
+                  <!--<td><%= headline.summary %></td>-->
+                  <!--<td><%= link_to 'Show', headline %></td>-->
+                  <!--<td><%= link_to 'Edit', edit_headline_path(headline) %></td>-->
+                  <!--<td><%= link_to 'Destroy', headline, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+                <!--</tr>-->
+              <!--<% end %>-->
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-10" id="right-column">
+          <table id="favorite-items">
+            <caption>Favorites</caption>
+
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Published</th>
+                <th>Action</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <% @entries.each_with_index do |entry, index| %>
+                <tr>
+                  <td class="item-link"><%= link_to entry[:title], entry[:url] %></td>
+
+                  <td class="publication-date"><%= entry[:published].strftime("%a %b %d, %Y") %></td>
+
+                  <!--<td><%= entry[:summary] %></td>-->
+
+                  <td class="save-link" id=<%= "entry-#{index}" %> > <%= link_to "Save", '#', :remote => true %>
+                  </td>
+                </tr>
+              <% end %>
+
+              <!--<% @headlines.each do |headline| %>-->
+                <!--<tr>-->
+                  <!--<td><%= headline.title %></td>-->
+                  <!--<td><%= headline.url %></td>-->
+                  <!--<td><%= headline.published %></td>-->
+                  <!--<td><%= headline.summary %></td>-->
+                  <!--<td><%= link_to 'Show', headline %></td>-->
+                  <!--<td><%= link_to 'Edit', edit_headline_path(headline) %></td>-->
+                  <!--<td><%= link_to 'Destroy', headline, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+                <!--</tr>-->
+              <!--<% end %>-->
+            </tbody>
+          </table>
+        </div>
+    </div>
+</div>
+
+<!--<table id="feed-items">-->
+  <!--<thead>-->
+    <!--<tr>-->
+      <!--<th>Title</th>-->
+      <!--<th>Published</th>-->
+      <!--<th>Action</th>-->
+      <!--<th colspan="3"></th>-->
+    <!--</tr>-->
+  <!--</thead>-->
+
+  <!--<tbody>-->
+
+    <!--<% @entries.each_with_index do |entry, index| %>-->
       <!--<tr>-->
-        <!--<td><%= headline.title %></td>-->
-        <!--<td><%= headline.url %></td>-->
-        <!--<td><%= headline.published %></td>-->
-        <!--<td><%= headline.summary %></td>-->
-        <!--<td><%= link_to 'Show', headline %></td>-->
-        <!--<td><%= link_to 'Edit', edit_headline_path(headline) %></td>-->
-        <!--<td><%= link_to 'Destroy', headline, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        <!--<td><%= link_to entry[:title], entry[:url] %></td>-->
+
+        <!--<td><%= entry[:published].strftime("%a %b %d, %Y") %></td>-->
+
+        <!--&lt;!&ndash;<td><%= entry[:summary] %></td>&ndash;&gt;-->
+
+        <!--<td class="save-link" id=<%= "entry-#{index}" %> > <%= link_to "Save", '#', :remote => true %>.-->
+        <!--</td>-->
       <!--</tr>-->
     <!--<% end %>-->
-  </tbody>
-</table>
+
+    <!--&lt;!&ndash;<% @headlines.each do |headline| %>&ndash;&gt;-->
+      <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+        <!--&lt;!&ndash;<td><%= headline.title %></td>&ndash;&gt;-->
+        <!--&lt;!&ndash;<td><%= headline.url %></td>&ndash;&gt;-->
+        <!--&lt;!&ndash;<td><%= headline.published %></td>&ndash;&gt;-->
+        <!--&lt;!&ndash;<td><%= headline.summary %></td>&ndash;&gt;-->
+        <!--&lt;!&ndash;<td><%= link_to 'Show', headline %></td>&ndash;&gt;-->
+        <!--&lt;!&ndash;<td><%= link_to 'Edit', edit_headline_path(headline) %></td>&ndash;&gt;-->
+        <!--&lt;!&ndash;<td><%= link_to 'Destroy', headline, method: :delete, data: { confirm: 'Are you sure?' } %></td>&ndash;&gt;-->
+      <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+    <!--&lt;!&ndash;<% end %>&ndash;&gt;-->
+  <!--</tbody>-->
+<!--</table>-->
 
 <script>
   $(function(){
     $("#feed-items").dataTable();
+  })
+  $(function(){
+    $("#favorite-items").dataTable();
   })
   </script>
 <!--<br>-->
