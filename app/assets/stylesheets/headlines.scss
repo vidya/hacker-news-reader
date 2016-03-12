@@ -7,14 +7,6 @@ div.dataTables_filter, .dataTables_paginate {
   text-align: right;
 }
 
-#left-column {
-  width: 49%;
-}
-
-#right-column {
-  width: 49%;
-}
-
 // tables
 table caption {
   margin-top: 10px;
@@ -27,8 +19,6 @@ table {
 
   margin-bottom: 8px;
   padding-right: 4px;
-//  border-collapse: collapse;
-//  z-index: 2;
 }
 
 table th {
@@ -36,27 +26,39 @@ table th {
   padding-right: 4px;
 }
 
-table#feed-items {
+table tr td {
+  padding-top: 4px;
+  padding-left: 4px;
+  vertical-align: top;
+}
+
+table#feed-items.dataTable.no-footer {
   background-color: lightyellow;
+  width: 800px;
 }
 
 table#favorite-items {
   background-color: lightcyan;
+  width: 90%;
 }
 
 // others
+.other-table-link {
+  text-decoration: underline;
+  text-align: right;
+  font-size: 1.4em;
+  padding-bottom: 8px;
+}
+
 .save-link {
-  padding-left: 8px;
+  text-decoration: underline;
 }
 
 .item-link {
   width: 380px;
-  padding-top: 10px;
-  padding-right: 4px;
-  padding-left: 4px;
 }
 
 .publication-date {
-  width: 120px;
+  width: 136px;
 }
 

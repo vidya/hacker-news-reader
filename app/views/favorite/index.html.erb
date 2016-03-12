@@ -5,8 +5,10 @@
 </div>
 
 <div class="container">
-          <table id="feed-items">
-            <caption>Headlines</caption>
+          <p class="other-table-link"><%= link_to "Headlines", "/headlines" %></p>
+
+          <table id="favorite-items">
+            <caption>Favorites</caption>
 
             <thead>
               <tr>
@@ -17,22 +19,18 @@
               </tr>
             </thead>
 
-            <p class="other-table-link"><%= link_to "Favorites", "/favorite/index" %></p>
-
             <tbody>
 
-              <% @entries.each_with_index do |entry, index| %>
+              <% @favorites.each_with_index do |favorite, index| %>
                 <tr>
-                  <td class="item-link" id=<%= "entry-link-#{index}" %> >
-                    <%= link_to entry[:title], entry[:url], :target => "_blank" %>
+                  <td class="item-link"><%= link_to favorite[:title], favorite[:url] %></td>
+
+                  <td class="publication-date"><%= favorite[:publication_date].to_s.split.first %></td>
+
+                  <td><%= link_to 'Remove', "/favorite/destroy/#{favorite.id}",  method: :delete,
+                                  data: { confirm: 'Are you sure?' } %>
                   </td>
 
-                  <td class="publication-date"><%= entry[:published].strftime("%a %b %d, %Y") %></td>
-
-                  <td class="save-link" id=<%= "entry-save-#{index}"%> >
-
-                    <%= link_to "Save", "#{get_link_str(entry)}" %>
-                  </td>
                 </tr>
               <% end %>
 
@@ -40,8 +38,9 @@
           </table>
 </div>
 
+
 <script>
-  $('#feed-items').dataTable({
+  $('#favorite-items').dataTable({
           "bPaginate": true,
           "bInfo": true,
           "bFilter": true,
@@ -52,5 +51,5 @@
               { sWidth: '40px' }
           ]
       });
-</script>
 
+</script>
