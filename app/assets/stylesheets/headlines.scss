@@ -7,6 +7,22 @@ div.dataTables_filter, .dataTables_paginate {
   text-align: right;
 }
 
+#links-row ul li {
+  display: inline;
+  text-decoration: underline;
+  margin-left: 20px;
+  font-size: 1.2em;
+  float: right;
+//  padding-bottom: 20px;
+}
+
+ul li a:hover, ul li a:focus {
+  background-color: lightgray;
+}
+
+#links-row {
+  padding-bottom: 30px;
+}
 // tables
 table caption {
   margin-top: 10px;
@@ -16,14 +32,11 @@ table caption {
 
 table {
   border: 1px solid blue;
-
   margin-bottom: 8px;
-  padding-right: 4px;
 }
 
 table th {
   padding-left: 4px;
-  padding-right: 4px;
 }
 
 table tr td {
@@ -35,6 +48,8 @@ table tr td {
 table#feed-items.dataTable.no-footer {
   background-color: lightyellow;
   width: 800px;
+
+  border-collapse: collapse;
 }
 
 table#favorite-items {
@@ -43,11 +58,12 @@ table#favorite-items {
 }
 
 // others
-.other-table-link {
-  text-decoration: underline;
-  text-align: right;
-  font-size: 1.4em;
-  padding-bottom: 8px;
+input {
+  margin-left: 14px;
+}
+
+table a:hover, table a:focus {
+  background-color: lightgray;
 }
 
 .save-link {

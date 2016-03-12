@@ -5,7 +5,18 @@
 </div>
 
 <div class="container">
-          <table id="feed-items">
+  <div id="links-row">
+    <ul>
+      <li>
+        <%= link_to "Favorites", "/favorite/index" %>
+      </li>
+
+      <li>
+        <%= link_to "Refresh Headlines", "/headlines" %>
+      </li>
+    </ul>
+  </div>
+          <table id="feed-items" style="border-collapse:separate">
             <caption>Headlines</caption>
 
             <thead>
@@ -16,8 +27,6 @@
                 <th colspan="3"></th>
               </tr>
             </thead>
-
-            <p class="other-table-link"><%= link_to "Favorites", "/favorite/index" %></p>
 
             <tbody>
 

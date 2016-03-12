@@ -7,6 +7,7 @@ $(document).ready ->
 #  $('.save-link').click ->
 #    alert('HERE')
 #    xy = this.id.replace('save', 'link')
+
 #    xy_link = $("#" + xy + " a")
 #
 ##    alert('save-link clicked, xy: ' + $(xy_link).html())
