@@ -7,20 +7,19 @@ div.dataTables_filter, .dataTables_paginate {
   text-align: right;
 }
 
-#links-row ul li {
+.links-row ul li {
   display: inline;
   text-decoration: underline;
   margin-left: 20px;
   font-size: 1.2em;
   float: right;
-//  padding-bottom: 20px;
 }
 
 ul li a:hover, ul li a:focus {
   background-color: lightgray;
 }
 
-#links-row {
+.links-row {
   padding-bottom: 30px;
 }
 // tables
