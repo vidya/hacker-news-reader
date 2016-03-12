@@ -1,0 +1,11 @@
+<tr>
+  <td class="item-link" id=<%= "entry-link-#{index}" %> >
+    <%= link_to entry[:title], entry[:url], :target => "_blank" %>
+  </td>
+
+  <td class="publication-date"><%= entry[:published].strftime("%a %b %d, %Y") %></td>
+
+  <td class="save-link" id=<%= "entry-save-#{index}"%> >
+    <%= link_to "Save", "#{get_link_str(entry)}" %>
+  </td>
+</tr>

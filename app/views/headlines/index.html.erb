@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="page-header text-center">
-    <h1>Feed Lister</h1>
+  <h1>Feed Lister</h1>
 </div>
 
 <div class="container">
@@ -16,37 +16,24 @@
       </li>
     </ul>
   </div>
-          <table id="feed-items" style="border-collapse:separate">
-            <caption>Headlines</caption>
 
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Published</th>
-                <th>Action</th>
-                <th colspan="3"></th>
-              </tr>
-            </thead>
+  <table id="feed-items" style="border-collapse:separate">
+    <caption>Headlines</caption>
 
-            <tbody>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Published</th>
+        <th>Action</th>
+      </tr>
+    </thead>
 
-              <% @entries.each_with_index do |entry, index| %>
-                <tr>
-                  <td class="item-link" id=<%= "entry-link-#{index}" %> >
-                    <%= link_to entry[:title], entry[:url], :target => "_blank" %>
-                  </td>
-
-                  <td class="publication-date"><%= entry[:published].strftime("%a %b %d, %Y") %></td>
-
-                  <td class="save-link" id=<%= "entry-save-#{index}"%> >
-
-                    <%= link_to "Save", "#{get_link_str(entry)}" %>
-                  </td>
-                </tr>
-              <% end %>
-
-            </tbody>
-          </table>
+    <tbody>
+      <% @entries.each_with_index do |entry, index| %>
+        <%= render 'feed_item', entry: entry, index: index  %>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 <script>
@@ -61,5 +48,10 @@
               { sWidth: '40px' }
           ]
       });
+
+//  $("input[type='search']").prop("padding-left", "20px")
+//  $("input[type='search']").setAttribute("padding-left", "20px")
+  $("input[type='search']").prop("width", "100px")
+
 </script>
 

@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="page-header text-center">
-    <h1>Feed Lister</h1>
+  <h1>Feed Lister</h1>
 </div>
 
 <div class="container">
@@ -13,35 +13,23 @@
     </ul>
   </div>
 
-          <table id="favorite-items">
-            <caption>Favorites</caption>
+  <table id="favorite-items">
+    <caption>Favorites</caption>
 
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Published</th>
-                <th>Action</th>
-                <th colspan="3"></th>
-              </tr>
-            </thead>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Published</th>
+        <th>Action</th>
+      </tr>
+    </thead>
 
-            <tbody>
-
-              <% @favorites.each_with_index do |favorite, index| %>
-                <tr>
-                  <td class="item-link"><%= link_to favorite[:title], favorite[:url] %></td>
-
-                  <td class="publication-date"><%= favorite[:publication_date].to_s.split.first %></td>
-
-                  <td><%= link_to 'Remove', "/favorite/destroy/#{favorite.id}",  method: :delete,
-                                  data: { confirm: 'Are you sure?' } %>
-                  </td>
-
-                </tr>
-              <% end %>
-
-            </tbody>
-          </table>
+    <tbody>
+      <% @favorites.each do |favorite| %>
+        <%= render 'favorite_item', favorite: favorite %>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 
@@ -57,5 +45,4 @@
               { sWidth: '40px' }
           ]
       });
-
 </script>

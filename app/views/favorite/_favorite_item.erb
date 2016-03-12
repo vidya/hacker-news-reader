@@ -1,0 +1,12 @@
+
+<tr>
+  <td class="item-link"><%= link_to favorite[:title], favorite[:url], :target => "_blank" %></td>
+
+  <td class="publication-date">
+    <%= favorite[:publication_date].strftime("%a %b %d, %Y") if favorite[:publication_date] %>
+  </td>
+
+  <td><%= link_to 'Remove', "/favorite/destroy/#{favorite.id}",
+            method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>

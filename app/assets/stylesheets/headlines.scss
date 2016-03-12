@@ -46,15 +46,15 @@ table tr td {
 
 table#feed-items.dataTable.no-footer {
   background-color: lightyellow;
-  width: 800px;
+  width: 100%;
 
   border-collapse: collapse;
 }
 
-table#favorite-items {
-  background-color: lightcyan;
-  width: 90%;
-}
+//table#favorite-items {
+//  background-color: lightcyan;
+////  width: 90%;
+//}
 
 // others
 input {
