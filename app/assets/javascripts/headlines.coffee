@@ -2,7 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-#$(document).ready ->
 $(document).on "page:change", ->
   $('.save-link').click ->
     headline_id = this.id.replace('save', 'link')
