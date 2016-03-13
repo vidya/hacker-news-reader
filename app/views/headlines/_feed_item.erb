@@ -5,14 +5,12 @@
 
   <td class="publication-date"><%= entry[:published].strftime("%a %b %d, %Y") %></td>
 
-  <td class="save-link" id=<%= "entry-save-#{index}" %>
-          data-title=<%= "#{entry[:title]}" %>
-          data-url=<%= "#{entry[:url]}" %>
-          data-publication-date=<%= "#{entry[:published]}" %>
+  <td class                 = "save-link"
+      id                    = <%= "entry-save-#{index}" %>
+      data-title            = <%= "#{entry[:title]}" %>
+      data-url              = <%= "#{entry[:url]}" %>
+      data-publication-date = <%= "#{entry[:published]}" %>
   >
-    <%= link_to "Save", '#' %>
 
-  <!--<td class="save-link" id=<%= "entry-save-#{index}"%> >-->
-    <!--<%= link_to "Save", "#{get_link_str(entry)}" %>-->
-  <!--</td>-->
+  <%= link_to "Save", '#' %>
 </tr>
