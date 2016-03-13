@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   post 'headlines/save' => 'headlines#save'
 
   # favorites routes
-  get 'favorite/index'
+  get 'favorites/index'
 
-  get 'favorite/save'
-  delete 'favorite/destroy/:id' => 'favorite#destroy'
+  get 'favorites/save'
+  delete 'favorites/destroy/:id' => 'favorites#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
