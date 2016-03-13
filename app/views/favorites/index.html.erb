@@ -32,17 +32,21 @@
   </table>
 </div>
 
-
 <script>
   $('#favorite-items').dataTable({
-          "bPaginate": true,
-          "bInfo": true,
-          "bFilter": true,
-          "bAutoWidth": false,
-          "aoColumns" : [
-              { sWidth: '650px' },
-              { sWidth: '100px' },
-              { sWidth: '40px' }
-          ]
-      });
+
+    "bPaginate": true,
+
+    aaSorting: [[1, 'dsc']],
+    bSortable: true,
+
+    "bInfo": true,
+    "bFilter": true,
+    "bAutoWidth": false,
+    "aoColumns" : [
+        { sWidth: '650px' },
+        { sWidth: '100px' },
+        { sWidth: '40px' }
+    ]
+  });
 </script>

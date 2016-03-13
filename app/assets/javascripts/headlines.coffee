@@ -22,7 +22,7 @@ $(document).on "page:change", ->
       }
 
       error: (jqXHR, textStatus, errorThrown) ->
-        $('#notice').append "Error in saving '#{headline_title}'"
+        $('#notice').append("Error in saving '#{headline_title}'")
 
       success: (data, textStatus, jqXHR) ->
-        $('#notice').append "Successfully saved '#{headline_title}'"
+        $('#notice').append("Successfully saved '#{headline_title}'")

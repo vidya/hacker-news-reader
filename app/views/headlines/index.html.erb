@@ -3,7 +3,9 @@
   <h1>Feed Lister</h1>
 </div>
 
-<p id="notice"><%= notice %></p>
+<div id="notice">
+  <p><%= notice %></p>
+</div>
 
 <div class="container">
   <div class="links-row">
@@ -39,15 +41,20 @@
 
 <script>
   $('#feed-items').dataTable({
-          "bPaginate": true,
-          "bInfo": true,
-          "bFilter": true,
-          "bAutoWidth": false,
-          "aoColumns" : [
-              { sWidth: '650px' },
-              { sWidth: '100px' },
-              { sWidth: '40px' }
-          ]
-      });
+    "bPaginate": true,
+
+    aaSorting: [[1, 'dsc']],
+    bSortable: true,
+
+    "bInfo": true,
+    "bFilter": true,
+    "bAutoWidth": false,
+
+    "aoColumns" : [
+        { sWidth: '650px' },
+        { sWidth: '100px' },
+        { sWidth: '40px' }
+    ]
+  });
 </script>
 
