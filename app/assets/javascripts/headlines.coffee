@@ -2,27 +2,28 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).ready ->
+#$(document).ready ->
+$(document).on "page:change", ->
+  $('.save-link').click ->
+    headline_id = this.id.replace('save', 'link')
 
-#  $('.save-link').click ->
-#    alert('HERE')
-#    xy = this.id.replace('save', 'link')
+    headline_link = $("#" + headline_id + " a")
+    headline_title = $(headline_link).html()
 
-#    xy_link = $("#" + xy + " a")
-#
-##    alert('save-link clicked, xy: ' + $(xy_link).html())
-#
-#    $.ajax '/favorite/save',
-#      type: 'POST'
-#      dataType: 'json'
-#
-#      data: {
-#        title:            $(xy_link).html(),
-#        url:              $(this).attr("data-url"),
-#        publication_date: $(this).attr("data-publication-date")
-#      }
-#
-#      error: (jqXHR, textStatus, errorThrown) ->
-#          $('body').append "AJAX Error: #{textStatus}"
-#      success: (data, textStatus, jqXHR) ->
-#          $('body').append "Successful AJAX call: #{data}"
+    $('#notice').html('')
+
+    $.ajax '/headlines/save',
+      type: 'POST'
+      dataType: 'json'
+
+      data: {
+        title:            headline_title,
+        url:              $(this).attr("data-url"),
+        publication_date: $(this).attr("data-publication-date")
+      }
+
+      error: (jqXHR, textStatus, errorThrown) ->
+        $('#notice').append "Error in saving '#{headline_title}'"
+
+      success: (data, textStatus, jqXHR) ->
+        $('#notice').append "Successfully saved '#{headline_title}'"

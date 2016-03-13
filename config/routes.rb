@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  # headlines routes
+  post 'headlines/save' => 'headlines#save'
+
+  # favorites routes
   get 'favorite/index'
 
   get 'favorite/save'
