@@ -6,15 +6,10 @@
 $(document).on "page:change", ->
 
   $('#feed-items').on "click", (event) ->
-    event_target = $(event.target)
-
     event_target_parent = $(event.target).parent()
     parent_id = $(event_target_parent).attr("id")
-#    alert(parent_id)
 
-#    headline_id = this.id.replace('save', 'link')
     headline_id = parent_id.replace('save', 'link')
-
     headline_link = $("#" + headline_id + " a")
     headline_title = $(headline_link).html()
 
@@ -31,11 +26,7 @@ $(document).on "page:change", ->
         title:            headline_title,
         url:              headline_url,
         publication_date: headline_publication_date
-#        url:              $(this).attr("data-url"),
-#        publication_date: $(this).attr("data-publication-date")
       }
-
-#      $('#' + uMessage).fadeIn("fast", function() { $(this).delay(1000).fadeOut("slow"); });
 
       error: (jqXHR, textStatus, errorThrown) ->
         $('#notice').append("Error in saving '#{headline_title}'").show()
