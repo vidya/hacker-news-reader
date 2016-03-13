@@ -4,7 +4,7 @@
 </div>
 
 <div id="notice">
-  <p><%= notice %></p>
+  <p></p>
 </div>
 
 <div class="container">
@@ -42,6 +42,7 @@
 <script>
   $('#feed-items').dataTable({
     "bPaginate": true,
+    "bStateSave": true,
 
     aaSorting: [[1, 'dsc']],
     bSortable: true,

@@ -52,17 +52,24 @@ table#feed-items.dataTable.no-footer {
 }
 
 // others
-#notice {
-  width: 50%;
+#notice{
+  display:block;
+
+  width:50%;
+  height:20px;
 
   margin-left: auto;
   margin-right: auto;
 
+//  background-color:#475;
+  overflow:scroll;
   color: orange;
 }
 
 #notice p {
   text-align: center;
+  height: 20px;
+
   font-size: 1.2em;
 }
 
