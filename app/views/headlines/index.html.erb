@@ -31,7 +31,7 @@
 
     <tbody>
       <% @entries.each_with_index do |entry, index| %>
-        <%= render 'feed_item', entry: entry, index: index  %>
+        <%= render 'headline', entry: entry, index: index  %>
       <% end %>
     </tbody>
   </table>

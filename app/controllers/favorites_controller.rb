@@ -8,7 +8,6 @@ class FavoritesController < ApplicationController
   def destroy
     @favorite.destroy
 
-    # redirect_to :action => :index
     redirect_to action: :index
   end
 
