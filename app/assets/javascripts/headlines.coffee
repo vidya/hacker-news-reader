@@ -4,6 +4,7 @@
 
 $(document).on "page:change", ->
 
+  # auto refresh the page about twice an hour
   (() ->
     one_minute      = 60 * 1000
     thirty_minutes  = 30 * one_minute
@@ -14,15 +15,20 @@ $(document).on "page:change", ->
     , (thirty_minutes)
   )()
 
+  # highlight headlines on mouse hover
   $('tr.headline-row').hover (->
     $(this).css 'background', 'burlywood'
   ), ->
     $(this).css 'background', ''
 
+  # handle bubbled up 'save' link clicks at the table level
   $('#feed-items').on "click", (event) ->
-
+    # do nothing if the headline was previously saved
     return if ($(event.target).html() == "saved")
 
+    # locate the td element containing the 'save' link
+    # and fetch the headline properties that were attached
+    # as data attributes to the td element
     event_target_parent = $(event.target).parent()
     parent_id = $(event_target_parent).attr("id")
 
@@ -33,6 +39,7 @@ $(document).on "page:change", ->
     headline_publication_date = $(event_target_parent).attr("data-publication-date-time")
     headline_url = $(event_target_parent).attr("data-url")
 
+    # remove pre-existing notice
     $('#notice').html('')
 
     $.ajax '/headlines/save',

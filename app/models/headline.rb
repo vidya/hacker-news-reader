@@ -11,6 +11,7 @@ class Headline < ActiveRecord::Base
     saved_headlines = Favorite.all.map { |x| x.title }
 
     entries = feed_entries.reduce([]) do |memo,entry|
+      # check if the headline has been saved previously
       already_saved = saved_headlines.include?(entry.title)
 
       memo << {
