@@ -4,6 +4,16 @@
 
 $(document).on "page:change", ->
 
+  (() ->
+    one_minute      = 60 * 1000
+    thirty_minutes  = 30 * one_minute
+
+    setInterval ->
+      location.reload()
+      sleep(one_minute)
+    , (thirty_minutes)
+  )()
+
   $('tr.headline-row').hover (->
     $(this).css 'background', 'burlywood'
   ), ->
