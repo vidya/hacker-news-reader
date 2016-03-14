@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :set_favorite, only: [:destroy]
 
   def index
-    @favorites = Favorite.all
+    @favorites = Favorite.order(created_at: :desc)
   end
 
   def destroy
