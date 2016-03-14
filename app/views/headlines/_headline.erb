@@ -1,17 +1,32 @@
-<tr>
+<tr class="headline-row">
   <td class="item-link" id=<%= "entry-link-#{index}" %> >
     <%= link_to entry[:title], entry[:url], :target => "_blank" %>
   </td>
 
   <td class="publication-date"><%= entry[:published].strftime("%a %b %d, %Y") %></td>
 
-  <td class                 = "save-link"
-      id                    = <%= "entry-save-#{index}" %>
-      data-title            = <%= "#{entry[:title]}" %>
-      data-url              = <%= "#{entry[:url]}" %>
-      data-publication-date = <%= "#{entry[:published]}" %>
-  >
+  <%- if entry[:previously_saved].eql?("yes") %>
+    <td class                 = "previously-saved-link"
+        id                    = <%= "entry-save-#{index}" %>
+        data-title            = <%= "#{entry[:title]}" %>
 
-  <%= link_to "Save", '' %>
-  </td>
+        data-previously-saved = <%= entry[:previously_saved] %>
+        data-url              = <%= "#{entry[:url]}" %>
+        data-publication-date-time = <%= "#{entry[:publication_date_time]}" %>
+    >
+      <p>SAVED</p>
+    </td>
+  <%- else %>
+    <td class                 = "save-link"
+        id                    = <%= "entry-save-#{index}" %>
+        data-title            = <%= "#{entry[:title]}" %>
+
+        data-previously-saved = <%= entry[:previously_saved] %>
+        data-url              = <%= "#{entry[:url]}" %>
+        data-publication-date-time = <%= "#{entry[:publication_date_time]}" %>
+    >
+      <%= link_to "Save", '' %>
+    </td>
+  <%- end %>
+
 </tr>
