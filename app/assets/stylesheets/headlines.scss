@@ -84,6 +84,15 @@ table a:hover, table a:focus {
   text-decoration: underline;
 }
 
+.previously-saved {
+  text-decoration: none;
+  font-style: italic;
+}
+
+.small-italics {
+  font-size: 0.4em;
+  font-style: italic;
+}
 .item-link {
   width: 380px;
 }

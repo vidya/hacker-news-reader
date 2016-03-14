@@ -25,13 +25,4 @@ class Headline < ActiveRecord::Base
       }
     end
   end
-
-  # def self.saved_headlines
-  #   saved_headlines = Favorite.all.map { |x| x.title }
-  #   all_headlines = fetch_entries
-  #
-  #   already_saved = all_headlines.select { |x| saved_headlines.include? x[:title] }
-  #   # binding.pry
-  #   already_saved
-  # end
 end
