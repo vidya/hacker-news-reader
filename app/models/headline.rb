@@ -8,15 +8,17 @@ class Headline < ActiveRecord::Base
 
     feed_entries = feed.entries.sort_by { |entry| entry.published}.reverse
 
-    saved_headlines = Favorite.all.map { |x| x.title }
+    saved_headlines = Favorite.pluck(:title)
+    # binding.pry
 
     entries = feed_entries.reduce([]) do |memo,entry|
       # check if the headline has been saved previously
       already_saved = saved_headlines.include?(entry.title)
 
+      # binding.pry
       memo << {
           published:                entry.published,
-          publication_date_time:    entry.published.to_s,
+          # publication_date_time:    entry.published.to_s,
 
           title:                    entry.title,
           previously_saved:         already_saved ? "yes" : "no",
