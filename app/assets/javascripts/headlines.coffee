@@ -15,22 +15,16 @@ $(document).on "page:change", ->
     , (thirty_minutes)
   )()
 
-#  # highlight headlines on mouse hover
-#  $('tr.headline-row').hover (->
-#    $(this).css 'background', 'burlywood'
-#  ), ->
-#    $(this).css 'background', ''
-  # highlight headlines on mouse hover
+  # highlight headlines on hover
   $('.headline-row').hover (->
     $(this).addClass 'hover'
   ), ->
     $(this).removeClass 'hover'
 
-
   # handle bubbled up 'save' link clicks at the table level
   $('#feed-items').on "click", (event) ->
     # do nothing if the headline was previously saved
-    return if ($(event.target).html() == "saved")
+    return if ($(event.target).html() == "Saved")
 
     # locate the td element containing the 'save' link
     # and fetch the headline properties that were attached
@@ -46,7 +40,7 @@ $(document).on "page:change", ->
     headline_url = $(event_target_parent).attr("data-url")
 
     # remove pre-existing notice
-    $('#notice').html('')
+#    $('#notice').html('')
 
     $.ajax '/favorites',
       type: 'POST'
@@ -60,8 +54,6 @@ $(document).on "page:change", ->
 
       error: (jqXHR, textStatus, errorThrown) ->
         $('#notice').append("Error in saving '#{headline_title}'")
-#          fadeIn("fast").delay(3000).fadeOut("4000")
 
       success: (data, textStatus, jqXHR) ->
         $('#notice').append("Successfully saved '#{headline_title}'")
-#          fadeIn("fast").delay(3000).fadeOut("4000")

@@ -3,9 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on "page:change", ->
-
-  $('tr').hover (->
-    $(this).css 'background', 'burlywood'
+  $('.favorite-row').hover (->
+    $(this).addClass 'hover'
   ), ->
-    $(this).css 'background', ''
-
+    $(this).removeClass 'hover'
