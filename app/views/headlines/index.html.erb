@@ -3,12 +3,10 @@
   <h1>Hacker News RSS Reader</h1>
 </div>
 
-<div id="notice">
-  <p></p>
-</div>
+<p id="notice"><%= notice %></p>
 
 <div class="container">
-  <div class="links-row">
+  <div class="action-links">
     <ul>
       <li>
         <%= link_to "Favorites", "/favorites" %>
@@ -20,7 +18,7 @@
     </ul>
   </div>
 
-  <table id="feed-items" class="table-striped" style="border-collapse:separate">
+  <table id="feed-items" style="border-collapse:separate">
       <caption>Headlines
         <sm class="small-italics"> at <%= "#{@last_refresh_time}" %> </sm>
       </caption>

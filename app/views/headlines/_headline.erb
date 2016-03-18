@@ -14,7 +14,7 @@
         data-url              = <%= "#{entry[:url]}" %>
         data-publication-date-time = <%= "#{entry[:publication_date_time]}" %>
     >
-      <p class="previously-saved">saved</p>
+      <p class="previously-saved">Saved</p>
     </td>
   <%- else %>
     <td class                 = "save-link"
@@ -23,7 +23,7 @@
 
         data-previously-saved = <%= entry[:previously_saved] %>
         data-url              = <%= "#{entry[:url]}" %>
-        data-publication-date-time = <%= "#{entry[:publication_date_time]}" %>
+        data-publication-date-time = <%= "#{entry[:published]}" %>
     >
       <%= link_to "Save", '' %>
     </td>
