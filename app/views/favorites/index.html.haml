@@ -1,0 +1,36 @@
+.page-header.text-center
+  %h1 Hacker News RSS Reader
+%p#notice= notice
+.container
+  .action-links
+    %ul
+      %li
+        = link_to "Headlines", "/headlines"
+  %table#favorite-items
+    %caption Favorites
+    %thead
+      %tr
+        %th Title
+        %th Published
+        %th Action
+    %tbody
+      - @favorites.each do |favorite|
+        = render 'favorite_item', favorite: favorite
+
+:javascript
+  $('#favorite-items').dataTable({
+    "bPaginate": true,
+    "bStateSave": true,
+
+    aaSorting: [[1, 'dsc']],
+    bSortable: true,
+
+    "bInfo": true,
+    "bFilter": true,
+    "bAutoWidth": false,
+    "aoColumns" : [
+        { sWidth: '650px' },
+        { sWidth: '100px' },
+        { sWidth: '40px' }
+    ]
+  });

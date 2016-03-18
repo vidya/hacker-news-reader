@@ -1,0 +1,6 @@
+%tr.favorite-row
+  %td.item-link= link_to favorite[:title], favorite[:url], :target => "_blank"
+  %td.publication-date
+    = favorite[:publication_date].strftime("%a %b %d, %Y") if favorite[:publication_date]
+  %td= link_to 'Remove', "/favorites/#{favorite.id}",                                   |
+      method: :delete, data: { confirm: "Do you want to remove '#{favorite.title}'?" } |

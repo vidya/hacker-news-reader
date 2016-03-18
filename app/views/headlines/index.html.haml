@@ -1,0 +1,41 @@
+.page-header.text-center
+  %h1 Hacker News RSS Reader
+%p#notice= notice
+.container
+  .action-links
+    %ul
+      %li
+        = link_to "Favorites", "/favorites"
+      %li
+        = link_to "Refresh Headlines", "/headlines"
+  %table#feed-items{:style => "border-collapse:separate"}
+    %caption
+      Headlines
+      %sm.small-italics
+        at #{"#{@last_refresh_time}"}
+    %thead
+      %tr
+        %th Title
+        %th Published
+        %th Action
+    %tbody
+      - @entries.each_with_index do |entry, index|
+        = render 'headline', entry: entry, index: index
+:javascript
+  $('#feed-items').dataTable({
+    "bPaginate": true,
+    "bStateSave": true,
+
+    aaSorting: [[1, 'dsc']],
+    bSortable: true,
+
+    "bInfo": true,
+    "bFilter": true,
+    "bAutoWidth": false,
+
+    "aoColumns" : [
+        { sWidth: '650px' },
+        { sWidth: '100px' },
+        { sWidth: '40px' }
+    ]
+  });
