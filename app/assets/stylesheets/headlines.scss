@@ -7,49 +7,63 @@ div.dataTables_filter, .dataTables_paginate {
   text-align: right;
 }
 
-.links-row ul li {
-  display: inline;
-  text-decoration: underline;
-  margin-left: 20px;
-  font-size: 1.2em;
-  float: right;
-}
+//.links-row ul li {
+//  display: inline;
+//  text-decoration: underline;
+//  margin-left: 20px;
+//  font-size: 1.2em;
+//  float: right;
+//}
 
-ul li a:hover, ul li a:focus {
-  background-color: lightgray;
-}
+//ul li a:hover, ul li a:focus {
+//  background-color: lightgray;
+//}
 
-.links-row {
-  padding-bottom: 30px;
-}
-// tables
-table caption {
-  margin-top: 10px;
-  text-align: left;
-  font-size: 2.0em;
-}
+//.links-row {
+//  padding-bottom: 30px;
+//
+//  & ul li {
+//    display: inline;
+//    text-decoration: underline;
+//    margin-left: 20px;
+//    font-size: 1.2em;
+//    float: right;
+//  }
+//}
+//// tables
+//table caption {
+//  margin-top: 10px;
+//  text-align: left;
+//  font-size: 2.0em;
+//}
+//
+//table {
+//  border: 1px solid blue;
+//  margin-bottom: 8px;
+//}
+//
+//table th {
+//  padding-left: 4px;
+//}
+//
+//table tr td {
+//  padding-top: 4px;
+//  padding-left: 4px;
+//  vertical-align: top;
+//}
 
-table {
-  border: 1px solid blue;
-  margin-bottom: 8px;
-}
-
-table th {
-  padding-left: 4px;
-}
-
-table tr td {
-  padding-top: 4px;
-  padding-left: 4px;
-  vertical-align: top;
-}
-
-table#feed-items.dataTable.no-footer {
-  background-color: #dbf6f9;
-  width: 100%;
-
-  border-collapse: collapse;
-}
+//table.dataTable {
+//  background-color: #f9e9f4;
+//  width: 100%;
+//
+//  border-collapse: collapse;
+//}
+//table#feed-items.dataTable.no-footer {
+//  background-color: #f9e9f4;
+//  width: 100%;
+//
+//  border-collapse: collapse;
+//}
 
 // others
 #notice{
@@ -76,9 +90,13 @@ input {
   margin-left: 14px;
 }
 
-table a:hover, table a:focus {
-  background-color: lightgray;
-}
+//table a:hover, table a:focus {
+//  background-color: lightgray;
+//}
+
+//.hover {
+//  background-color: #c4ffc7;
+//}
 
 .save-link {
   text-decoration: underline;
@@ -92,10 +110,10 @@ table a:hover, table a:focus {
   font-size: 0.4em;
   font-style: italic;
 }
-.item-link {
-  width: 380px;
-}
-
-.publication-date {
-  width: 136px;
-}
+//.item-link {
+//  width: 380px;
+//}
+//
+//.publication-date {
+//  width: 136px;
+//}
