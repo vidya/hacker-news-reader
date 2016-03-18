@@ -16,6 +16,7 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
 
+    flash[:notice] = "Removed favorite: #{@favorite.title}"
     redirect_to action: :index
   end
 
