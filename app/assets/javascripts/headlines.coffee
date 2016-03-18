@@ -15,11 +15,17 @@ $(document).on "page:change", ->
     , (thirty_minutes)
   )()
 
+#  # highlight headlines on mouse hover
+#  $('tr.headline-row').hover (->
+#    $(this).css 'background', 'burlywood'
+#  ), ->
+#    $(this).css 'background', ''
   # highlight headlines on mouse hover
-  $('tr.headline-row').hover (->
-    $(this).css 'background', 'burlywood'
+  $('.headline-row').hover (->
+    $(this).addClass 'hover'
   ), ->
-    $(this).css 'background', ''
+    $(this).removeClass 'hover'
+
 
   # handle bubbled up 'save' link clicks at the table level
   $('#feed-items').on "click", (event) ->
@@ -42,7 +48,7 @@ $(document).on "page:change", ->
     # remove pre-existing notice
     $('#notice').html('')
 
-    $.ajax '/headlines/save',
+    $.ajax '/favorites',
       type: 'POST'
       dataType: 'json'
 
