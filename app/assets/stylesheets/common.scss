@@ -1,20 +1,10 @@
 
-// tables
-//table caption {
-//}
-
-.action-links {
-  padding-bottom: 30px;
-
-  & ul li {
-    display: inline;
-    text-decoration: underline;
-    margin-left: 20px;
-    font-size: 1.2em;
-    float: right;
-  }
+// layout
+div.dataTables_filter, .dataTables_paginate {
+  text-align: right;
 }
 
+// tables
 table {
   border: 1px solid blue;
   margin-bottom: 8px;
@@ -43,6 +33,19 @@ table {
   }
 }
 
+// others
+.action-links {
+  padding-bottom: 30px;
+
+  & ul li {
+    display: inline;
+    text-decoration: underline;
+    margin-left: 20px;
+    font-size: 1.2em;
+    float: right;
+  }
+}
+
 .hover {
   background-color: #c4ffc7;
 }
@@ -54,20 +57,3 @@ table {
 .publication-date {
   width: 136px;
 }
-
-//table th {
-//  padding-left: 4px;
-//}
-
-//table tr td {
-//  padding-top: 4px;
-//  padding-left: 4px;
-//  vertical-align: top;
-//}
-//
-//table.dataTable {
-//  background-color: #f9e9f4;
-//  width: 100%;
-//
-//  border-collapse: collapse;
-//}
