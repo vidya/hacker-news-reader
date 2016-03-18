@@ -1,5 +1,5 @@
 
-<tr>
+<tr class="favorite-row">
   <td class="item-link"><%= link_to favorite[:title], favorite[:url], :target => "_blank" %></td>
 
   <td class="publication-date">
@@ -7,6 +7,6 @@
   </td>
 
   <td><%= link_to 'Remove', "/favorites/#{favorite.id}",
-            method: :delete, data: { confirm: 'Are you sure?' } %>
+            method: :delete, data: { confirm: "Do you want to remove '#{favorite.title}'?" } %>
   </td>
 </tr>
