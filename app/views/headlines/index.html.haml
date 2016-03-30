@@ -36,10 +36,12 @@
           -str = ''
           -str << ":title => #{entry[:title]}"
           -str << ''
-          %td.save-link{"id" => "entry-save-#{index}",  "data-url" => "#{entry[:url]}"}
-            -#="Save"
-            = link_to "Save", '', {"data-title" => "#{entry[:title]}"}
-            -#%a{:href=>"", :data => {"#{str}"}} Save
+          -if entry[:previously_saved].eql?("yes")
+            %td.previously-saved-link{"id" => "entry-save-#{index}",  "data-url" => "#{entry[:url]}"}
+              %p.previously-saved Saved
+          -else
+            %td.save-link{"id" => "entry-save-#{index}",  "data-url" => "#{entry[:url]}"}
+              = link_to "Save", '', {"data-title" => "#{entry[:title]}"}
 :javascript
   $('#feed-items').dataTable({
     "bPaginate": true,
