@@ -20,28 +20,8 @@
         %th Action
     %tbody
       - @entries.each_with_index do |entry, index|
-        -#= render 'headline', entry: entry, index: index
-        %tr.headline-row
-          %td{"id" => "entry-link-#{index}"}
-            = link_to entry[:title], entry[:url],  :target => "_blank"
-          %td.publication-date
-            = entry[:published].strftime("%a %b %d, %Y")
+        = render 'headline', entry: entry, index: index
 
-          -attr_str = ''
-          -attr_str <<  " data-title = #{entry[:title]} "
-          -attr_str <<  " data-previously-saved = #{entry[:previously_saved]} "
-          -attr_str <<  " data-url = #{entry[:url]} "
-          -attr_str <<  " data-publication-date-time = #{entry[:published]} "
-
-          -str = ''
-          -str << ":title => #{entry[:title]}"
-          -str << ''
-          -if entry[:previously_saved].eql?("yes")
-            %td.previously-saved-link{"id" => "entry-save-#{index}",  "data-url" => "#{entry[:url]}"}
-              %p.previously-saved Saved
-          -else
-            %td.save-link{"id" => "entry-save-#{index}",  "data-url" => "#{entry[:url]}"}
-              = link_to "Save", '', {"data-title" => "#{entry[:title]}"}
 :javascript
   $('#feed-items').dataTable({
     "bPaginate": true,

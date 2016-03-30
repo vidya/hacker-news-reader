@@ -1,0 +1,12 @@
+%tr.headline-row
+  %td{"id" => "entry-link-#{index}"}
+    = link_to entry[:title], entry[:url],  :target => "_blank"
+  %td.publication-date
+    = entry[:published].strftime("%a %b %d, %Y")
+
+  -if entry[:previously_saved].eql?("yes")
+    %td.previously-saved-link{"id" => "entry-save-#{index}",  "data-url" => "#{entry[:url]}"}
+      %p.previously-saved Saved
+  -else
+    %td.save-link{"id" => "entry-save-#{index}",  "data-url" => "#{entry[:url]}"}
+      = link_to "Save", '', {"data-title" => "#{entry[:title]}"}
