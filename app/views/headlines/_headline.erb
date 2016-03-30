@@ -28,10 +28,10 @@
         attr_str = ''
         attr_str <<  " class = save-link "
         attr_str <<  " id = entry-save-#{index} "
-        attr_str <<  " data-title = '#{entry[:title]}' "
+        attr_str <<  " data-title = #{entry[:title]} "
         attr_str <<  " data-previously-saved = #{entry[:previously_saved]} "
-        attr_str <<  " data-url = '#{entry[:url]}' "
-        attr_str <<  " data-publication-date-time = '#{entry[:published]}' "
+        attr_str <<  " data-url = #{entry[:url]} "
+        attr_str <<  " data-publication-date-time = #{entry[:published]} "
     %>
     <td
         <%= "#{attr_str}" %>

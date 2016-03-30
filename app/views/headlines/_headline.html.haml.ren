@@ -1,0 +1,18 @@
+-#%tr.headline-row
+-#  - attr_str = ''
+-#  - attr_str <<  " class = item-link "
+-#  - attr_str <<  " id = entry-save-#{index} "
+-#  - id = entry-save-#{index}
+-#
+-#  %td.item-link##{id}
+-#    "xyz"
+-#  -#  "#{link_to entry[:title], entry[:url], :target = _blank}"
+-#  -#-#%td{"#{attr_str}"} "#{link_to entry[:title], entry[:url], :target = _blank}"}
+-#  -#
+-#  -#%td.publication-date= entry[:published].strftime(%a %b %d, %Y)
+-#  -#- if entry[:previously_saved].eql?(yes)
+-#  -#  - attr_str = ''
+-#  -#  - attr_str    class = previously-saved-link
+-#  -#  - attr_str    id = "entry-save-#{index}"
+-#  -#  %td{"#{attr_str}"}
+-#  -#    %p.previously-saved 11-Saved
